@@ -271,9 +271,17 @@ body {
 	margin-bottom: 60px;
 }
 .tabs-content {
-	display: flex;
+	display: none;
 	align-items: center;
 	flex-wrap: wrap;
+	visibility: hidden;
+}
+.tabs-content.visible {
+	display: flex;
+	visibility: visible;
+}
+.tab {
+	cursor: pointer;
 }
 .section-title {
 	font-weight: 400;
@@ -347,7 +355,17 @@ body {
 	font-size: 14px;
 	color: #000000;
 }
-
+.button-next {
+	display: none;
+	background-color: transparent;
+	border: none;
+	position: absolute;
+	right: 0;
+	top: 50px;
+	transform: rotateY(-50%);
+	z-index: 90;
+	cursor: pointer;
+}
 /* BURGER */
 .m-menu-button.open span:nth-child(1) {
 	transform: rotate(135deg);
@@ -368,6 +386,7 @@ body {
 	transform: rotate(0deg);
 	transition: 0.25s ease-in-out;
 }
+
 /* ADAPTIVE */
 @media (max-width: 1200px) {
 	.header {
@@ -525,6 +544,12 @@ body {
 	.news {
 		padding-top: 40px;
 		padding-bottom: 40px;
+	}
+	.news-card {
+		max-width: 90%;
+	}
+	.button-next {
+		display: block;
 	}
 	.section-news-title {
 		margin-bottom: 40px;
